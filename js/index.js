@@ -6,6 +6,8 @@ const siteContent = {
     "nav-item-4": "Features",
     "nav-item-5": "About",
     "nav-item-6": "Contact",
+    "nav-item-7": "Test",
+    "nav-item-8": "DOMinate",
     "img-src": "img/logo.png"
   },
   "cta": {
@@ -71,14 +73,23 @@ const footerP = document.querySelectorAll("footer p");
 
 // Mutate the Dom
 
-
-
-
 //Header
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+var newLink1 = document.createElement("a");
+newLink1.textContent = siteContent["nav"]["nav-item-7"];
+
+var newLink2 = document.createElement("a");
+newLink2.textContent = siteContent["nav"]["nav-item-8"];
+
+nav.appendChild(newLink1);
+nav.prepend(newLink2);
+
 Array.from(nav.children).forEach((value, index) => {
   value.textContent = siteContent["nav"][`nav-item-${index + 1}`];
+  value.setAttribute('style', "color:green;");
 });
+
 
 
 //CTA
